@@ -2,3 +2,11 @@
     text-align: center;
 }
 
+/* #div {
+    width: 100%;
+} */
+
+input {
+    display: flex;
+    justify-items: center;
+ }
