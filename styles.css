@@ -14,3 +14,8 @@ input {
     display: flex;
     justify-items: center;
  }
+
+ .itemBtn {
+     display: flex;
+     flex-direction: column;
+ }

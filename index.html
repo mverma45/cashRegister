@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
     <title>Cash Register</title>
 </head>
 <body>
@@ -14,17 +14,21 @@
     </header>
     
     <form action="">
-    <label for="item">Enter Item:</label>
-    <input type="text" id="item" name="item"><br>
-    <label for="price">Enter Price: $</label>
-    <input type="text" id="price" name="price"><br>
-    <label for="stotal">Subtotal:</label>
-    <input type="text" id="stotal" name="stotal"><br>
-    <label for="tax">Tax:</label>
-    <input type="text" id="tax" name="tax"><br>
-    <label for="total">Total:</label>
-    <input type="text" id="total" name="total"><br>
-    <button onclick="storeItem()">Add Item</button>
-</form>
+        <label for="item">Enter Item:</label>
+        <input type="text" id="item" name="item"><br>
+        <label for="price">Enter Price: $</label>
+        <input type="text" id="price" name="price"><br>
+        <label for="stotal">Subtotal: $</label>
+        <input type="text" id="sTotal" name="sTotal"><br>
+        <label for="tax">Tax:</label>
+        <p id="taxBtn">
+        <button> Caluclate Tax</button>
+        <input type="text" id="tax" name="tax"><br>
+        <label for="total">Total:</label>
+        <input type="text" id="total" name="total"><br>
+        <p id="myBtn">
+        <button onclick="btn();"> Add Item </button>
+   </form>
+
 </body>
 </html>
