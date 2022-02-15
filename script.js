@@ -2,36 +2,33 @@
 
 //Subtotal gets the price and enters in substotal
 window.onload = function() {
-    let price = document.getElementById("price"),
-        sTotal = document.getElementById("sTotal");
-    price.addEventListener('input', function() {
-        sTotal.value = price.value;
-    });
+    let price = document.getElementById("price")
+        // sTotal = document.getElementById("sTotal");
+    // price.addEventListener('input', function() {
+        // sTotal.value = price.value;
+    // });
 };
 
 
-//calculates tax
+// calculates tax
+// takes string 42, then passes it to test2 as an integer then multiplies it by 2 then prints to the console 84 ex. 42 * 2, the 10 in the test2 arguments is the base.
 
-function tax() {
-    const taxBtn = document.getElementById("price");
-    taxBtn.addEventListener('input', function() {
-       Total = sTotal * 5;
-        console.log(Total)
-    });
-};
+// let text = '42.25'
+// let test2 = parseFloat(text, 10)*2;
+// console.log(test2)
 
-// let add = 12+9
-// let multiply = 8 * 5;
-// let subtract = 10-4;
-// let mod = 15%5
-// let div = Math.round(19/7)
+// function tax(){
+//     const taxBtn = document.getElementById('taxBtn');
+//     console.log(taxBtn)
+//     return parseFloat(t) * 7.25 * Math.round();
+// }
 
+// function tax(){
+//     const taxBtn = document.getElementById('taxBtn');
+//     return parseFloat(tax) * 7.25;
+//     console.log(tax)
+// }
 
-// console.log(add)
-// console.log(multiply)
-// console.log(subtract)
-// console.log(mod)
-// console.log(div)
 
 //Adding Items
 function btn() {
