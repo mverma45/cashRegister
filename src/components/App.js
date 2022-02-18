@@ -87,18 +87,27 @@ function Items({ items }) {
   })
 }
 
+// work on getting a total.
 function Total({ items }) {
-  return <div>Total: 26</div>
-  // return items.map((item, d) => {
-  //   return (
-  //     <div key={d}>
-  //       {item.name} {item.price}
-  //     </div>
-  //   )
-  // })
+  // I think this is item because on like 96 it returns an item name, then it will return the Total price so {Total.price}
+  return items.map((item, t) => {
+    return (
+      <div key={t}>
+        {item.name} {Total.price}
+      </div>
+    )
+    // < div > Total: </div >
+  })
 }
+// return items.map((item, d) => {
+//   return (
+//     <div key={d}>
+//       {item.name} {item.price}
+//     </div>
+//   )
+// })
 
-//Subtotal gets the price and enters in substotal
+//Subtotal gets the price and enters in subtotal
 
 // calculates tax
 // takes string 42, then passes it to test2 as an integer then multiplies it by 2 then prints to the console 84 ex. 42 * 2, the 10 in the test2 arguments is the base.
