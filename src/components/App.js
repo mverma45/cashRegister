@@ -1,85 +1,102 @@
-import './App.css'
-import {useState} from 'react'
+import "./App.css"
+import { useState } from "react"
 
 function App() {
-
   const [items, setItems] = useState([])
 
-  const addItem = (item) => {
-    console.log('hello there', item)
+  const addItem = item => {
+    console.log("hello there", item)
     setItems([...items, item])
-
   }
 
   return (
     <div className="App">
-
-
-      <header onSubmit={addItem} className="heading">
-          <h1>Welcome to the Store</h1>
+      <header className="heading">
+        <h1>Welcome to the Store</h1>
       </header>
 
-      <Form onSubmit={addItem}/>
-      <Items items={items}/>
+      <Form onSubmit={addItem} />
+      <Items items={items} />
+      <Total items={items} />
     </div>
   )
 }
 
-function Form({onSubmit}) {
-
-
+function Form({ onSubmit }) {
   let [price, setPrice] = useState(0)
-  let [name, setName] = useState('')
+  let [name, setName] = useState("")
 
-  const handlePriceChange = pr =>{
-    console.log('the price', pr)
+  const handlePriceChange = pr => {
+    console.log("the price", pr)
     setPrice(parseFloat(pr))
   }
-  
-  const handleNameChange = n =>{
-    console.log('the name', n)
+
+  const handleNameChange = n => {
+    console.log("the name", n)
     setName(n)
   }
 
-  const handleSubmit = e =>{
+  const handleSubmit = e => {
     e.preventDefault()
-    onSubmit({price, name})
+    onSubmit({ price, name })
     setPrice(0)
-    name = ''
-    setName('')
+    setName("")
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="item">Enter Item:</label>
-      <input type="text" id="item" name="item"
+      <input
+        type="text"
+        id="item"
+        name="item"
         value={name}
         onChange={e => handleNameChange(e.target.value)}
-      /><br/>
+      />
+      <br />
       <label htmlFor="price">Enter Price: $</label>
-      <input value={price} 
-        type="number" 
-        name="price" 
-        onChange={e => handlePriceChange(e.target.value)}/>
-      <br/>
-      <label htmlFor="stotal">Subtotal: $</label><br/><br/>
+      <input
+        value={price}
+        type="number"
+        name="price"
+        onChange={e => handlePriceChange(e.target.value)}
+      />
+      <br />
+      <label htmlFor="stotal">Subtotal: $</label>
+      <br />
+      <br />
       <label htmlFor="tax">Tax: ${tax(price)}</label>
-      <br/><br/> 
+      <br />
+      <br />
       <label htmlFor="total">Total: ${tax(price) + price}</label>
-      <br/>
-      <br/>
-      <input type='submit' value="add Item"/>
+      <br />
+      <br />
+      <input type="submit" value="add Item" />
     </form>
   )
 }
 
 // TODO: calculate total of all items
-function Items({items}){
+function Items({ items }) {
   return items.map((item, d) => {
-    return <div key={d}>{item.name}</div>
+    return (
+      <div key={d}>
+        {item.name} {item.price}
+      </div>
+    )
   })
 }
 
+function Total({ items }) {
+  return <div>Total: 26</div>
+  // return items.map((item, d) => {
+  //   return (
+  //     <div key={d}>
+  //       {item.name} {item.price}
+  //     </div>
+  //   )
+  // })
+}
 
 //Subtotal gets the price and enters in substotal
 
@@ -90,9 +107,8 @@ function Items({items}){
 // let test2 = parseFloat(text, 10)*2;
 // console.log(test2)
 
-function tax(cost){
-    return parseFloat(cost) * 0.0725;
+function tax(cost) {
+  return parseFloat(cost) * 0.0725
 }
-
 
 export default App
