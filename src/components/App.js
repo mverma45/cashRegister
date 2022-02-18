@@ -89,13 +89,9 @@ function Items({ items }) {
 
 // work on getting a total.
 function Total({ items }) {
-  // I think this is item because on like 96 it returns an item name, then it will return the Total price so {Total.price}
+  // This will return the total of the item in line 48, then it will return the Total price so {Total.price}
   return items.map((item, t) => {
-    return (
-      <div key={t}>
-        {item.name} {Total.price}
-      </div>
-    )
+    return <div key={t}>{Total.price}</div>
     // < div > Total: </div >
   })
 }
