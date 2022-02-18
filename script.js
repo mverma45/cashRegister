@@ -23,12 +23,11 @@ window.onload = function() {
 //     return parseFloat(t) * 7.25 * Math.round();
 // }
 
-// function tax(){
-//     const taxBtn = document.getElementById('taxBtn');
-//     return parseFloat(tax) * 7.25;
-//     console.log(tax)
-// }
+function tax(r){
+    return parseFloat(r) * 7.25;
+}
 
+console.log(tax(5));
 
 //Adding Items
 function btn() {
