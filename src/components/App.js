@@ -91,18 +91,16 @@ function Items({ items }) {
 function Total({ items }) {
   // This will return the total of the item in line 48, then it will return the Total price so {Total.price}
   return items.map((item, t) => {
-    return <div key={t}>{Total.price}</div>
-    // < div > Total: </div >
+    return <div key={t}>{Total.price} </div>
   })
+  // return items.map((item, d) => {
+  //   return (
+  //     <div key={d}>
+  //       {item.name} {item.price}
+  //     </div>
+  //   )
+  // })
 }
-// return items.map((item, d) => {
-//   return (
-//     <div key={d}>
-//       {item.name} {item.price}
-//     </div>
-//   )
-// })
-
 //Subtotal gets the price and enters in subtotal
 
 // calculates tax
